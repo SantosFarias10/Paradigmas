@@ -358,3 +358,17 @@ e -> e-e -> e+e -> ... -> n-n+n -> ... -> 10-15+12
 ### Ejemplo de la pila de ejecución
 
 ![Pila de Ejecución](../Imagenes/pilaDeEjecucion.png)
+
+### Otro ejemplo de pila de ejecución
+
+* `fact(3)`
+
+    1) Apila un registro, llama a `fact(2)`.
+
+    2) Esta llamada apila otro registro, llama a `fact(1)`.
+
+    3) Esta llamada apila otro registro, de forma que hay tres registros en la pila.
+
+    4) Cuando se termina de ejecutar el bloque de registro más reciente, se saca ese registro de la pila.
+
+    5) y así sucesivamente hasta que la pila queda vacía.
