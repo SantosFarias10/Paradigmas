@@ -266,3 +266,95 @@ e -> n -> nd -> dd -> 2d -> 25
 
 e -> e-e -> e+e -> ... -> n-n+n -> ... -> 10-15+12
 ```
+
+## Semántica
+
+### Lenguaje objeto y metalenguaje
+
+* El **Metalenguaje** es el que usamos para hablar de un **lenguaje objeto**.
+
+* Necesitamos un lenguaje para hablar de la semántica de los lenguajes de programación.
+
+### Delimitación de la semántica de los lenguajes de programación
+
+* Los programas pueden definir **Funciones parciales**
+
+    - Algunos de sus valores pueden ser **indefinidos** (Por ejemplo si no terminan).
+
+    - Algunos de sus valores pueden ser **errores**.
+
+* Una función es computable si hay algún programa que la computa
+
+    - Problema: Definiciones independientes de la implementación de un lenguaje de programación concreto, con sus limitaciones y particularidades.
+
+### ¿Cómo definir la clase de funciones computable?
+
+* Una clase de funciones matemáticas: las **Funciones recursivas parciales** (Church).
+
+* Las que computar con una máquina idealizada, abstracta: la **Máquina de Turing**:
+
+    - Cinta infinita, divida por celdas.
+
+    - Un cabezal de lectura/escritura.
+
+    - Un controlador de estado finito.
+
+* Si se puede expresar en **Labbda cálculo**.
+
+### Diferentes aproximaciones a la semántica 
+
+* Lambda cálculo.
+
+* Semántica denotacional.
+
+* Semántica operacional.
+
+### Semántica operacional
+
+* Una representación abstracta de la ejecución de un programa, como secuencia de transiciones entre estados (en una máquina abstracta).
+
+* Los estados son una descripción abtracta de la memoria y estructuras de datos.
+
+* Las transiciones siguen la estructura de la sintaxis.
+
+### Máquina Abstracta
+
+![Máquina abstracta](../Imagenes/maquinaAbstracta.png)
+
+### Información en la máquina abstracta
+
+* Separa memoria de código y de datos:
+
+    - **Contador de programa**: Es una dirección de memoria con la instrucción que se está ejecutando.
+
+    - **Puntero de entorno**: Valores de las variables en una parte del código.
+
+* **Lenguaje no estructurado por bloques**: La memoria de datos es no estructurada, los valores de las variables son visibles desde todo el código.
+
+* **Lenguaje estructurado por bloques**: **Pila de ejecución** o **Stack**. Cuando el programa entra en un nuevo bloque, se agrega a la pila un **Activation record** con espacio para las variables locales del bloque, el puntero de entorno apunta al nuevo activation record. Cuando el programa sale del bloque, se retira el activation record de la pila y el puntero de entorno se restablece a su ubicación anterior.
+
+### Pila de ejecución
+
+* Los registros de activación se guardan en la pila
+
+    - Cada nuevo bloque apila (*push*) un nuevo regristro de activación en la pila.
+
+    - Cada vez que se termina un bloque se saca (*pop*) el registro de arriba de la pila.
+
+    - La pila tiene todos los registros que son activos en un determinado momento de la ejecución, con el que se usó más recientemente en la punta.
+
+### Registros de activación o Marcos de pila (Activation Record o Stack Frames)
+
+* Guarda información de un bloque:
+
+    - Variables locales.
+
+    - *Control link* al que ha llamado al activation record, para reubicar el puntero de entorno.
+
+    - Variables temporales y resultados intermedios.
+
+* Entran y salen de la pila (*Stack*), eso hace que se puedan usarse llamados anidados/recursivos.
+
+### Ejemplo de la pila de ejecución
+
+![Pila de Ejecución](../Imagenes/pilaDeEjecucion.png)
