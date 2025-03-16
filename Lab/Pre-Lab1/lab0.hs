@@ -214,6 +214,7 @@ data Expr = Suma Expr Expr
           | Producto Expr Expr
           | Division Expr Expr
           | Valor Int
+            deriving (Eq, Show)
 
 --b)Luego, definir la semántica del tipo "Expr", i.e., definir una función que evalúa (en forma
 --natural) una expresión aritmética "Expr". Por ejemplo: 
@@ -234,11 +235,29 @@ evaluar (Valor num) = num
 --a) Definir un tipo "BinTree" que permita representar un arbol binario
 --polimorfico (i.e, en cuyos nodos se almacenen valores de tipo generico "a").
 
+data BinTree a = Hoja
+               | Rama (BinTree a) a (BinTree a)
+               deriving (Eq, Show)
+
 --b) Definir una función recursiva que devuelva la profundidad de un "BinTree". 
+
+profundidad:: BinTree a -> Int
+profundidad Hoja = 0
+profundidad (Rama lef _ rig) = 1 + max (profundidad lef) (profundidad rig)
 
 --c) Definir una funcion general de fold que opera sobre un "BinTree" y luego, redefinir la funcion 
 --de profundidad del item b en términos de esta última. 
 
+foldBinTree :: (b -> a -> b -> b) -> b -> BinTree a -> b
+foldBinTree _ base Hoja = base
+foldBinTree f base (Rama izq valor der) = f (foldBinTree f base izq) valor (foldBinTree f base der)
+
+profundidadFold :: BinTree a -> Int
+profundidadFold = foldBinTree (\izq _ der -> 1 + max izq der) 0
+
 --d) Definir una función recuriva que devuelve una lista con los elementos del BinTree, y luego,
 -- redefinirla en términos de la función fold del item c.
 
+elementos :: BinTree a -> [a]
+elementos Hoja = []
+elementos (Rama izq valor der) = elementos izq ++ [valor] ++ elementos der
