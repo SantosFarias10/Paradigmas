@@ -64,6 +64,16 @@
 
     - **Control link**: Puntero al activation record que anterior en la pila. Será el puntero de entorno al desapilar el activation record actual.
 
+        * **Apilar** un record en la pila:
+
+            - Fijar el nuevo control link para que apunte al viejo puntero de entorno.
+
+            - Dijar el puntero de entorno al nuevo record.
+
+        * **Desapilar** un record de la pila:
+
+            - Seguir el control link del record actual para reasignar el punetor de entorno.
+
     - **Access link**: Puntero al activation record más cercano que lo contiene (en la estructura de bloques) en el texto del programa (diferente al control link para llamadas a funciones declaradas con más anterioridad)
 
     - Los valores de las variables declaradas localmente y de los parámetros/argumentos que toma la función/declaración (su L o R valor según el tipo de pasaje de parámetros que se use, el cual puede ser una clausura). Por ello el tamaño del activation record depende de las estructuras de datos usadas y de la función declarada/llamada (de la cantidad y tipos de sus variables y argumentos).
