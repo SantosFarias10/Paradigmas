@@ -49,3 +49,9 @@
 
 []
 ```
+
+# Ejercicio 9.1
+
+![Ejercicio 9.1](../Imagenes/ejercicio9,1.png)
+
+RT es transparente referencialmente
