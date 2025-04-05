@@ -19,18 +19,32 @@
 
 ```
 []
+
 [c1, res, n]
+
 [c1, res, n, n-1, sum(n-1)]
+
 [c1, res, n, n-1, sum(n-1), c1, res, n]
+
 [c1, res, n, n-1, sum(n-1), c1, res, n, n-1, sum(n-1)]
+
 [cl, res, n, n-1, sum(n-1), cl, res, n, n-1, sum(n-1), cl, res, n]
+
 [cl, res, n, n-1, sum(n-1), cl, res, n, n-1, sum(n-1), cl, res, n, n-1, sum(n-1)]
+
 [cl, res, n, n-1, sum(n-1), cl, res, n, n-1, sum(n-1), cl, res, n, n-1, sum(n-1), cl, res, n]
+
 [cl, res, n, n-1, sum(n-1), cl, res, n, n-1, sum(n-1), cl, res, n, n-1, sum(n-1), cl, res, n, n-1, sum(n-1)]
+
 [cl, res, n, n-1, sum(n-1), cl, res, n, n-1, sum(n-1), cl, res, n, n-1, sum(n-1), cl, res, n, n-1, sum(n-1), cl, res, n]
+
 [cl, res, n, n-1, sum(n-1), cl, res, n, n-1, sum(n-1), cl, res, n, n-1, sum(n-1), cl, res, n, n-1, sum(n-1)]
+
 [cl, res, n, n-1, sum(n-1), cl, res, n, n-1, sum(n-1), cl, res, n, n-1, sum(n-1)]
+
 [cl, res, n, n-1, sum(n-1), cl, res, n, n-1, sum(n-1)]
+
 [cl, res, n, n-1, sum(n-1)]
+
 []
 ```
