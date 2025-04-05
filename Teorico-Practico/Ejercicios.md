@@ -8,9 +8,10 @@
 30   i = i + 1
 40   PRINT i; " squared = "; i * i 
 50 }
-60 while i < 10
-70 PRINT "Program Completed"
-80 END
+60 if (i < 10) {
+70   PRINT "Program Completed"
+80 }
+90 END
 ```
 
 # Ejercicio 5.3
