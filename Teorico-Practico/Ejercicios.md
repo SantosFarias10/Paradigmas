@@ -54,4 +54,20 @@
 
 ![Ejercicio 9.1](../Imagenes/ejercicio9,1.png)
 
-RT es transparente referencialmente
+RT es transparente referencialmente.
+
+# Ejercicio 9.2
+
+![Ejercicio 9.2](../Imagenes/ejercicio9,2.png)
+
+No lo es ya que tiene asginaciones
+
+* Observacion:
+
+        - **Declarativo**: "Lo que quiero".
+
+        - **Imperativo**: "Como lograrlo".
+
+# Ejercicio 9.3
+
+![Ejercicio 9.3](../Imagenes/ejercicio9,3.png)
