@@ -140,3 +140,61 @@ int main() {
 ```
 Partes NO declarativo esta entre ""
 
+
+# Pasaje de Parametros
+
+## Ejercicio 6.7
+
+![Ejercicio 6.7](../Imagenes/ejercicio6,7.png)
+
+a) Por valor:
+
+Significa que `k` es una copia de `n`, y los cambios de `k` no afectan a `n`.
+
+* Al entrar a `p(n)`, `k = 4`
+
+* Se incrementa en 2, `k = 6`
+
+* El `print(n)` --> `4`
+
+* Luego `n = 4 + 2 * 6 = 16`
+
+* Por ultimo `print(n)` --> `16`
+
+Por lo que la respuesta es `4` y `16`.
+
+b) Por valor-resultado:
+
+Esto es como por valor pero se copia al inicio y al final se copia de vuelta al argumento original (osea, se sincroniza `k->n` al final del procedimiento).
+
+* Al entrar a `p(n)`, `k = 4`
+
+* Se incrementa en 2, `k = 6`
+
+* El `print(n)` --> `4`
+
+* Luego `n = 4 + 2 * 6 = 16`
+
+* Antes de salir de `p`, `k` (vale 6) se copia de vuelta a `n`
+
+* => `n = 6`
+
+* Por ultimo `print(n)` --> `6`
+
+Por lo que la respuesta es `4`, `6`
+
+c) Por referencia:
+
+Ahora `k` es literalmente `n`, asi que cualquier cambio en `k` afecta a `n` directamente.
+
+* Al entrar a `p(n)`, `k = n = 4`
+
+* Se incrementa en 2, `k = 6` => `n = 6`
+
+* El `print(n)` --> imprime `6`
+
+* Luego `n = 6 + 2 * 6 = 18`
+
+* Por ultimo `print(n)` --> imprimira `18`
+
+Por lo que la respuesta es `6`, `18`.
