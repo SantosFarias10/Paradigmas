@@ -71,3 +71,27 @@ No lo es ya que tiene asginaciones
 # Ejercicio 9.3
 
 ![Ejercicio 9.3](../Imagenes/ejercicio9,3.png)
+
+* Primer fenomeno (No transparente referencialmente):
+
+```
+int g;
+int f(int x){
+    return g + x;
+}
+```
+
+* Segundo fenomeno (Con efectos secundarios):
+
+```
+ing g;
+int f(int x) {
+    g = x;
+    return x * 2;
+}
+```
+
+# Ejercicio 9.4
+
+![Ejercicio 9.4](../Imagenes/ejercicio9,4.png)
+
