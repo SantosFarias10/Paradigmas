@@ -95,3 +95,4 @@ int f(int x) {
 
 ![Ejercicio 9.4](../Imagenes/ejercicio9,4.png)
 
+Hacen que todas las expresiones sean declarativas
