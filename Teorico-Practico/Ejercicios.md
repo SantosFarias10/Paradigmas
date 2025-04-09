@@ -96,3 +96,47 @@ int f(int x) {
 ![Ejercicio 9.4](../Imagenes/ejercicio9,4.png)
 
 Hacen que todas las expresiones sean declarativas
+
+# Ejercicio 9.5
+
+![Ejercicio 9.5 Parte 1](../Imagenes/ejercicio9,5,1.png)
+
+![Ejercicio 9.5 Parte 2](../Imagenes/ejercicio9,5,2.png)
+
+* Primer codigo:
+
+```
+int A;
+int B;
+int Add() {
+    ""return A + B;"" ---> Usa variables globales, como la funcion no recibe parametros, solamente depende del estado global del programa (no declarativo). Una funcion DECLARATIVA/FUNCIONAL deberia depender unicamente de sus entradas.
+}
+int main() {
+    int answer;
+    ""A = 5;"" ---> Asignaciones a variables globales (no declarativo)
+    ""B = 7;"" ---> Lo mismo de arriba
+    ""answer = Add();"" ---> Llama a una funcion que usa ese estado global
+    ""printf(" %d \ n ", answer);"" ---> Tiene un efecto observable en el exterior (output), por lo tanto tambien es un efecto secundario (no declarativo)
+    return 0;
+}
+```
+Parte NO declarativo esta entre "".
+
+* Segundo codigo:
+
+```
+int glob = 0;
+int square(int x) {
+    ""glob = 1;"" ---> Modifica una variable global dentro de una funcion (no declarativo)
+    return x * x;
+}
+int main() {
+    int res;
+    ""glob = 0;"" ---> otra asignacion global
+    ""res = square(5);"" ---> Llama a una funcion que cambia el estado global
+    ""res += glob;"" ---> Dependencia del estado glob, que fue alterado dentro de la funcion square
+    ""return res;"" ---> Depende de un valor (res) "contaminado" por mutaciones previas, por lo que se considera no declarativa
+}
+```
+Partes NO declarativo esta entre ""
+
