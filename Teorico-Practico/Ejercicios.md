@@ -198,3 +198,49 @@ Ahora `k` es literalmente `n`, asi que cualquier cambio en `k` afecta a `n` dire
 * Por ultimo `print(n)` --> imprimira `18`
 
 Por lo que la respuesta es `6`, `18`.
+
+## Ejercicio 6.8
+
+![Ejercicio 6.8](../Imagenes/ejercicio6,8.png)
+
+Tome `k` como el tercer parametro.
+
+#### a) Por valor:
+
+La funcion no puede cambiar el valor de la variable de la funcion que llama. Cualquier cambio a `z` dentro de `p` no afecta a `a+c` afuera.
+
+* `c:= 5;` --> local.
+
+* `x:= z;` --> `x:= 3` (`= 2+1 = a+b`).
+
+* `c:= 4` --> local.
+
+* `y:= z+a` --> `3+2=5`
+
+Como `y` es local, `b` no cambia, asi que `print(b)` sigue siendo `4`.
+
+#### b) Por valor-resultado:
+
+Dentro de la funcion se trabaja como si los argumentos hubieran sido pasados por valor, pero al acabar la funcion los valores que tengan los argumentos seran copiados a la ubicacion de memoria en la que se ubicaba el valor copiado inicialmente. Se copia al inicio y al final se copia de vuelta al argumento original.
+
+Valor original: `a+c=3` se copia al **entrar**
+
+* `x:= z` --> `x=3`
+
+* `y:= z+a` --> `3+2=5`
+
+* Al salir, `y` **se copia a** `b` (porque `y` es el segundo parametro, que si es `b`)
+
+* Y `z` **se copia de regreso a** `a+c`. Pero `a+c` no existe afuera, es una expresion. En valor-resultado lo que hace es **almacenar la posicion de** `a+c` **al entrar** (pero `a+c` no tiene direccion valid). En estos casos, esto es **indefinido**.
+
+* Si `a+c` es tratado como temporal => no se copia nada.
+
+* Si fuera `k` una variable real => se copiaria su valor actualizado.
+
+Asumiendo que no se actualiza nada, como `y=b=4` entra y `y=5` se sale, entonces `print(b)` imprime `5`.
+
+#### c) Por referencia:
+
+La funcion que es llamada puede modificar la variable con efecto en el bloque que llama a la funcion.
+
+`a+c=3`, por referencia no se puede pasar una expresion, solo una variable. Asi que **esto seria invalido** xd.
