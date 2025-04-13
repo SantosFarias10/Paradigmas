@@ -30,7 +30,9 @@ Se diferencian por el momento en el que evalúa el parámetro real (**estricta**
     
     - No hay "*aliasing*" (es decir, dos identificadores para una sola ubicación en memoria)
     
-* La función no puede cambiar el valor de la variable de la función que llama
+* El argumento se evala, y el valor que se obtiene (su r-valor) se liga a una variable local de la funcion, en general copiando el valor a una nueva ubicacion de memoria en el activation record de la llamada a funcion. El valor que se encuentra en el activation record que llama a la funcion no es modificado en ningun momento.
+
+* La función no puede cambiar el valor de la variable de la función que llama.
 
 ## Pasaje por refencia
 
@@ -100,6 +102,8 @@ swap(x, y);
 
 ## Pasaje por valor-resultado
 
+* Dentro de la funcion se trabaja como si los argumentos hubieran sido pasados por valor, pero al acabar la funcion los valores que tengan los argumentos seran copiados a la ubicacion de memoria en la que se ubicaba el valor copiado inicialmente.
+
 * Intenta tener beneficios de llamada por referencia (efecto secundarios en los argumentos) sin los problemas de *aliasing*.
 
 * Hace una copia en los argumentos al principio, copia las variables locales a los propios argumentos al final del procedimiento, de forma que se modifican los argumentos.
@@ -107,6 +111,8 @@ swap(x, y);
 * WARNING: el comportamiento depende del orden en que se copian las variables locales.
 
 ## Pasaje por nombre
+
+* Los argumentos de una funcion no se evaluan antes de la llamada a la funcion, sino que se sustituyen sus nombres directamente en el cuerpo de la funcion y luego se dejan para ser evaluados cada vez que aparecen en la funcion. Si un argumento no se usa en el cuerpo de la funcion, el argumento no se evalua; si se usa varias veces, se re-evalua cada vez que aparece
 
 * En el cuerpo de la función se sustituye textualmente el argumento para cada instancia de su parámetro.
 
@@ -117,6 +123,8 @@ swap(x, y);
     - Asociado a evualuación perezosa en lenguajes funcionales (por ejemplo: Haskell)
     
 ## Pasaje por necesidad
+
+* Si se evalua el argumento de la funcion, ese valor se almacena para usos posteriores.
 
 * Variación de *call-by-name* donde se guarda la evaluación del parámetro después del primer uso.
 
