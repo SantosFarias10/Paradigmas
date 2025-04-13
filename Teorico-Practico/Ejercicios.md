@@ -147,9 +147,9 @@ Partes NO declarativo esta entre ""
 
 ![Ejercicio 6.7](../Imagenes/ejercicio6,7.png)
 
-a) Por valor:
+#### a) Por valor:
 
-Significa que `k` es una copia de `n`, y los cambios de `k` no afectan a `n`.
+Significa que `k` es una copia de `n`, y los cambios de `k` no afectan a `n`. La funcion no puede cambiar el valor de la variable de la funcion que llama
 
 * Al entrar a `p(n)`, `k = 4`
 
@@ -163,9 +163,9 @@ Significa que `k` es una copia de `n`, y los cambios de `k` no afectan a `n`.
 
 Por lo que la respuesta es `4` y `16`.
 
-b) Por valor-resultado:
+#### b) Por valor-resultado:
 
-Esto es como por valor pero se copia al inicio y al final se copia de vuelta al argumento original (osea, se sincroniza `k->n` al final del procedimiento).
+Esto es como por valor pero se copia al inicio y al final se copia de vuelta al argumento original (osea, se sincroniza `k->n` al final del procedimiento). Dentro de la funcion se trabaja como si los argumentos hubieran sido pasados por valor, pero al acabar la funcion los valores que tengan los argumentos seran copiados a la ubicacion de memoria en la que se ubicaba el valor copiado inicialmente.
 
 * Al entrar a `p(n)`, `k = 4`
 
@@ -183,9 +183,9 @@ Esto es como por valor pero se copia al inicio y al final se copia de vuelta al 
 
 Por lo que la respuesta es `4`, `6`
 
-c) Por referencia:
+#### c) Por referencia:
 
-Ahora `k` es literalmente `n`, asi que cualquier cambio en `k` afecta a `n` directamente.
+Ahora `k` es literalmente `n`, asi que cualquier cambio en `k` afecta a `n` directamente. La funcion que es llamada puede modificar la variable con efecto en el bloque que llama a la funcion
 
 * Al entrar a `p(n)`, `k = n = 4`
 
