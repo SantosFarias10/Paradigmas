@@ -345,3 +345,9 @@ Lo que determina si es **por referencia** o **por valor-resultado** es cuando se
 * Si cambia inmediatamente dentro de `P` => es **por referencia**.
 
 * Si cambia hasta salir de `P` => es **por valor resultado**.
+
+## Ejercicio 6.3
+
+![Ejercicio 6.3](../Imagenes/ejercicio6,3.png)
+
+Permite actuar en la funcion que llama, si el programador lo necesita, ya que pasás **por referncia**, lo que realmente estas enviando es la **direccion de memoria** (l-valor) de la variable, no su valor => si dentro de la funcion llamada modificas ese valor, el cambio se refleja afuera en la funcion que hizo la llamada.
