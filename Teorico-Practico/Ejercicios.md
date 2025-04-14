@@ -351,3 +351,9 @@ Lo que determina si es **por referencia** o **por valor-resultado** es cuando se
 ![Ejercicio 6.3](../Imagenes/ejercicio6,3.png)
 
 Permite actuar en la funcion que llama, si el programador lo necesita, ya que pasás **por referncia**, lo que realmente estas enviando es la **direccion de memoria** (l-valor) de la variable, no su valor => si dentro de la funcion llamada modificas ese valor, el cambio se refleja afuera en la funcion que hizo la llamada.
+
+## Ejercicio 6.4
+
+![Ejercicio 6.4](../Imagenes/ejercicio6,4.png)
+
+No tiene efectos afuera de la funcion llamada, ya que cuando pasás **por valor**, lo que se pasa es **una copia del valor de la variable**, no la variable original => Lo que le pase a esa copia no afecta a la variable original.
