@@ -357,3 +357,9 @@ Permite actuar en la funcion que llama, si el programador lo necesita, ya que pa
 ![Ejercicio 6.4](../Imagenes/ejercicio6,4.png)
 
 No tiene efectos afuera de la funcion llamada, ya que cuando pasás **por valor**, lo que se pasa es **una copia del valor de la variable**, no la variable original => Lo que le pase a esa copia no afecta a la variable original.
+
+## Ejercicio 6.5
+
+![Ejercicio 6.5](../Imagenes/ejercicio6,5.png)
+
+Permite actuar en la función que llama, si el programador lo necesita, ya que se pasa **una copia** del valor al entrar a la funcion (como por valor xd) y se actualiza la variable original al salir de la funcion con el valor de esa copia.
