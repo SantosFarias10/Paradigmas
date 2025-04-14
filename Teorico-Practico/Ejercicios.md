@@ -244,3 +244,74 @@ Asumiendo que no se actualiza nada, como `y=b=4` entra y `y=5` se sale, entonces
 La funcion que es llamada puede modificar la variable con efecto en el bloque que llama a la funcion.
 
 `a+c=3`, por referencia no se puede pasar una expresion, solo una variable. Asi que **esto seria invalido** xd.
+
+## Ejercicio 6.9
+
+![Ejercicio 6.9](../Imagenes/ejercicio6,9.png)
+
+#### Fragmento en C
+
+En C todo se pasa por **valor**, salvo que usemos punteros.
+
+```c
+void interchange(int x1, int y1){
+    int z1;
+    z1 = x1;
+    x1 = y1;
+    y1 = z1;
+
+    printf("x1 = %d, y1 = %d\n", x1,y1);
+}
+
+int main(){
+    int x = 50, y = 70;
+
+    interchange(x, y); //Aca se pasan **copias** de x e y.
+
+    printf("x = %d, y = %d\n", x,y);
+
+    return 0;
+}
+```
+
+* `interchange(x, y)` recibe **copias** de `x` e `y`.
+
+* Copian los valores de las copias, pero **los originales no cambian**.
+
+* Lo que imprime es:
+
+```shell
+x1 = 70, y1 = 50
+x = 50, y = 70
+```
+
+#### Fragmento en Perl
+
+En Perl, las variables se pasan **Por referencia** implicita cuando se usa `@_` (el arreglo de los parametros) (Fuente chatGPT)
+
+```perl
+$x = 50;
+$y = 70;
+
+&interchange($x, $y);
+print "x:$x y:$y\n";
+
+sub interchange {
+    ($x1, $y1) = @_;
+    my $z1 = $$x1;  # desreferenciar
+    $$x1 = $$y1;
+    $$y1 = $z1;
+    print "x1:$$x1 y1:$$y1\n";
+}
+```
+
+* `@_` recibe **referencias a las variables**.
+
+* Si modifica `$$x1` o `$$y1`, se modifica **las variables originales**.
+
+* Lo que imprime es:
+
+```shell
+x1:70 y1:50
+x:70 y:50
+```
