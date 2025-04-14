@@ -150,9 +150,13 @@ swap(x, y);
 
 ## Reglas de alcance
 
-* **Alcance estatico** (lexico): El valor de las variables globales se obtienen del bloque inmediantamente contenedor. Se busca al identificador con ese nombre declarado en el lugar más cercano al texto (bloque) actual del programa en un bloque que lo contenga. Usa la relación entre los **bloques** (***access link***). Más usado. El reemplazo de la variable por su valor se da en tiempo de **compilación**.
+* **Alcance estatico** (tambien llamado alcance lexico): El valor de las variables globales se obtienen del bloque inmediantamente contenedor. Se busca al identificador con ese nombre declarado en el lugar más cercano al texto (bloque) actual del programa en un bloque que lo contenga. Usa la relación entre los **bloques** (***access link***). Más usado. El reemplazo de la variable por su valor se da en tiempo de **compilación**.
+
+    - Un identificador global se refiere al identificador con ese nombre que se encuentra en el bloque contenedor mas cercano en el texto del programa.
 
 * **Alcance dinamico**: el valor de las variables globales se obtienen del activation record mas reciente. Se busca al identificador con ese nombre, declarado en el ***activation record*** más cercano (subiendo por la pila). Usa la secuencia de llamadas de la ejecución del programa. Usado por excepciones. El reemplazo de la variable por su valor se da en tiempo de **ejecución**.
+
+    - Un identificador global se refiere al identificador que se encuentre en el registro de activacion mas reciente en la pila de ejecucion.
 
 ## Activation record para alcance estatico
 
