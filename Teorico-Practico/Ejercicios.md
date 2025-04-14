@@ -315,3 +315,9 @@ sub interchange {
 x1:70 y1:50
 x:70 y:50
 ```
+
+## Ejercicio 6.1
+
+![Ejercicio 6.1](../Imagenes/ejercicio6,1.png)
+
+**B no cambia** despues de `{PA B A+C}` => se pasa **Por valor** ya que los cambios a `Y` dentro de `P` **No afectan a** `B` **afuera**.
