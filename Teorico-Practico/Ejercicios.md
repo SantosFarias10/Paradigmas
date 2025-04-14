@@ -321,3 +321,27 @@ x:70 y:50
 ![Ejercicio 6.1](../Imagenes/ejercicio6,1.png)
 
 **B no cambia** despues de `{PA B A+C}` => se pasa **Por valor** ya que los cambios a `Y` dentro de `P` **No afectan a** `B` **afuera**.
+
+## Ejercicio 6.2
+
+![Ejercicio 6.2](../Imagenes/ejercicio6,2.png)
+
+Si `{Browse B}` muestra `5` => la llamada se pudo haber hecho:
+
+* Por referencia
+
+* O por valor-resultado
+
+Ya que ambas:
+
+* Se recibe un argumento inicial `B=4`
+
+* Se actualiza dentro de `P` a `5`
+
+* Y al salir de `P`, `B` refleja ese valor actualizado.
+
+Lo que determina si es **por referencia** o **por valor-resultado** es cuando se actualiza el valor en `B`:
+
+* Si cambia inmediatamente dentro de `P` => es **por referencia**.
+
+* Si cambia hasta salir de `P` => es **por valor resultado**.
