@@ -363,3 +363,17 @@ No tiene efectos afuera de la funcion llamada, ya que cuando pasás **por valor*
 ![Ejercicio 6.5](../Imagenes/ejercicio6,5.png)
 
 Permite actuar en la función que llama, si el programador lo necesita, ya que se pasa **una copia** del valor al entrar a la funcion (como por valor xd) y se actualiza la variable original al salir de la funcion con el valor de esa copia.
+
+# Alcance 
+
+## Ejercicio 6.1
+
+![Ejercicio 6.1](../Imagenes/ejercicioAlcance6,1.png)
+
+Tiene alcance estatico, ya que usa el identificador global que se encuentra afuera afuera del bloque contenedor.
+
+## Ejercicio 6.5
+
+![Ejercicio 6.5](../Imagenes/ejercicioAlcance6,5.png)
+
+
