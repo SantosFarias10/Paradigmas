@@ -28,7 +28,7 @@ Un objeto se representa con un activation record con un access link para encontr
 
     - La interseccion de las lineas es el centro del circulo que se busca.
 
-### Modelar esto en Simula
+#### Modelar esto en Simula
 
 * Los puntos, lineas y circulos son objetos.
 
