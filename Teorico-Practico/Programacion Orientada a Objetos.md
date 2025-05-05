@@ -39,7 +39,7 @@
 ### Ejemplo: Componente funcion
 
 * Componente
-    
+
     - Funcion que calcula la raiz cuadrada.
 
 * Interfaz
@@ -48,7 +48,7 @@
 
 * Especificacion
 
-    - Si `x > 1`, entonces `sqrt(x) * sqrt(x) ≈ x`
+    - Si `x > 1`, entonces `sqroot(x) * sqroot(x) ≈ x`
 
 * Implementacion
 
@@ -101,7 +101,7 @@ end
 
 ### Tipos abstractos de datos (TADs)
 
-* Idea 1: **Separar la interfaz de la implementacion.
+* Idea 1: **Separar la interfaz de la implementacion**.
 
     - Ejemplo:
 
@@ -109,7 +109,7 @@ end
 
         * Los conjuntos se implementan como: `lista enlazada`, etc.
 
-* Idea 2: **Usar comprobacion de tipos para forzar la separacion.
+* Idea 2: **Usar comprobacion de tipos para forzar la separacion**.
 
     - El programa cliente solo tiene acceso a las operaciones de la interfaz.
 
@@ -206,7 +206,7 @@ void swap(T& x, T& y){
 
 * Semejantes a la sobrecarga, con una diferencia critica: la sobrecarga se resuelve en tiempo de compilacion, mientras que el lookup dinamico se resuelve **en tiempo de ejecucion**.
 
-### Encapsulamiento
+### Encapsulacion
 
 * El programador de un concepto tiene una vista detallada.
 
