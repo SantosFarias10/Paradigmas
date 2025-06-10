@@ -1,0 +1,6 @@
+.obsidian
+*.un~
+build.xml
+build
+bigData.txt
+*.jar
