@@ -1,0 +1,9 @@
+bin/parser
+bin/subscription
+bin/httpRequest
+bin/feed
+bin/namedEntity
+*.class
+*.jar
+manifest
+FeedReader

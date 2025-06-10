@@ -1,0 +1,82 @@
+<project name="FeedReader" default="compile" basedir=".">
+    <description>
+        simple build file for lab two
+    </description>
+
+    <!-- set global properties for this build -->
+    <property name="src.dir" value="src"/>
+    <property name="build.dir" value="build"/>
+    <property name="classes.dir" value="${build.dir}/classes"/>
+    <property name="lib.dir" value="bin"/>
+    <property name="main-class" value="FeedReaderMain"/>
+    <property name="arg1" value="-quick"/>
+    <property name="arg2" value="-rand"/>
+
+    <path id="classpath">
+        <fileset dir="${lib.dir}">
+            <include name="*.jar"/>
+        </fileset>
+    </path>
+
+    <target name="init">
+        <!-- Create the time stamp -->
+        <tstamp/>
+        <!-- Create the build directory structure used by compile -->
+        <mkdir dir="${build.dir}"/>
+        <mkdir dir="${classes.dir}"/>
+    </target>
+
+    <target name="compile" depends="init"
+            description="compile the source">
+        <!-- Compile the Java code from ${src} into ${classes.dir} -->
+        <javac srcdir="${src.dir}" destdir="${classes.dir}" classpathref="classpath" includeantruntime="false"/>
+    </target>
+
+    <target name="jar" depends="compile"
+            description="creates FeedReader.jar">
+        <jar destfile="${ant.project.name}" basedir="${classes.dir}">
+            <manifest>
+                <attribute name="Main-Class" value="${main-class}"/>
+                <attribute name="Class-Path" value="${lib.dir}/json-20250107.jar" />
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="compile"
+            description="runs FeedReader">
+        <java classname="${main-class}" fork="true">
+            <classpath>
+                <path refid="classpath"/>
+                <path location="${classes.dir}"/>
+            </classpath>
+        </java>
+    </target>
+
+    <target name="namedEntity" depends="compile"
+            description="runs FeedReader -ne">
+        <java classname="${main-class}" fork="true">
+            <classpath>
+                <path refid="classpath"/>
+                <path location="${classes.dir}"/>
+            </classpath>
+            <arg line="${arg1}"/>
+        </java>
+        <java classname="${main-class}" fork="true">
+            <classpath>
+                <path refid="classpath"/>
+                <path location="${classes.dir}"/>
+            </classpath>
+            <arg line="${arg2}"/>
+        </java>
+    </target>
+
+
+    <target name="clean"
+            description="clean up">
+        <!-- Delete the ${build} and ${dist} directory trees -->
+        <delete dir="${build.dir}"/>
+        <delete dir="${classes.dir}"/>
+        <delete file="${ant.project.name}"/>
+    </target>
+
+</project>
