@@ -53,3 +53,39 @@ La arquitectura del sistema Java se centra en la JVM, que gestiona los archivos 
 Las caracteristicas de seguridad de Java brindan proteccion contra el acceso no autorizado al codigo mediante entornos restringidos (*sandboxing*), firmas de codigo y salvaguardas contra desbordamiento de bufer. Estas previenen vulnerabilidades comunes presentes en lenguajes como C, mejorando la resiliencia general de las aplicaciones.
 
 En resumen, el papel fundamental de los principios de la POO en el desarrollo moderno de software, revelando la evolucion inherente y los conceptos fundacionales que presisten en diversos lenguajes de programacion. C++ muestra complejidad frente al rendimiento, mientras que Java enfatiza la confiabilidad y la seguridad, destacando como ambos lenguajes continuan desarrollando los principios de encapsulacion, herencia y polimorfismo para apoyar practicas de programacion resilientes.
+
+---
+
+## Parcial 2 del 8 de Mayo de 2025
+
+### 1
+
+* **Smalltalk** permite reemplazo en caliente. Una de sus principales caracteristicas es que pueden modificar clases, metodos y objetos durante la ejecucion del programa.
+
+* C++ tiene menos *Overhead* que Smalltalk, porque las llamadas a metodos virtuales se resuelven usando tablas de metodos (*vtable*) que son mas eficientes que el sistema de envio de mensajes de Smalltalk, que implica buscar un diccionario de metodos.
+
+* *Override* es cuando una subclase proporciona una nueva implementacion de un metodo que ya esta definido en su superclase. Tanto C++ como Smalltalk permiten *overriding*.
+
+### 2
+
+La palabra `super()` en Python permite acceder a metodos de la clase padre desde una subclase. En este caso, se usa para llamar al constructor de la clase `Persona` dentro de `Estudiante`. Asi, `self.nombre` se inicializa correctamente usando la logica de superclase. Evita repetir codigo y permite reutilizar comportamientos de la clase base. Tambien se puede usar para llamar a otros metodos heredados.
+
+### 3
+
+El primer programa da error porque intenta acceder directamente a un atributo `private`, lo cual no esta permitido fuera de la clase. Java usa el modificador `private` para proteger los datos y forzar el uso de metodos de acceso.
+
+El segundo programa usa metodos `getNombre()` y `setNombre()`, que si son publicos. Esto permite acceder y modificar el atributo sin violar el encapsulamiento.
+
+### 4
+
+* Una **Funcion Virtual** es una funcion que puede ser sobrescrita (*override*) por una clase hija y se resuelve en tiempo de ejecucion (**Polimorfismo Dinamico**). Se usan principalmente en lenguajes como C++, donde necesitas indicar explicitamente que una funcion puede ser redefinida con la palabra clave `virtual`.
+
+* En **Ruby**, todos los metodos son por defecto virtuales, osea, pueden ser sobrescritos por subclases.
+
+* Una funcion o metodo "**Final**" es un metodo que no puede ser sobrescito por una subclase.
+
+* En Ruby sigue la cadena de herencia (lineal), busca el metodo en la clase actual y luego en sus ancestros, respetando la jerarquia. En este caso,  por eso `PinguinoPinguino` usa el metodo `desplazamiento` de `Pinguino` y no de `Ave`.
+
+* El principio de sustitucion de Liskov dice que un objeto de una subclase debe poder ser usado como si fuera de su superclase sin afectar la correccion del programa. Aqui no se viola dicho principio: el metodo `desplazamiento` es redefinido, pero no cambia la interfaz ni rompe el uso esperado.
+
+---
