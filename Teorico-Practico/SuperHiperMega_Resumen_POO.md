@@ -89,3 +89,33 @@ El segundo programa usa metodos `getNombre()` y `setNombre()`, que si son public
 * El principio de sustitucion de Liskov dice que un objeto de una subclase debe poder ser usado como si fuera de su superclase sin afectar la correccion del programa. Aqui no se viola dicho principio: el metodo `desplazamiento` es redefinido, pero no cambia la interfaz ni rompe el uso esperado.
 
 ---
+
+## Parcial 2 del 18 de Junio de 2024
+
+### 1
+
+* Vemos que en PHP se imprime `hello goodbye hello`. Cada objeto tiene su propia copia de la variable `myvar` (**variable de instancia**, por eso cada objeto tiene su propia copia xd) y los cambios en un objeto no afectan a otros. Por eso cuando se imprime `demo1`, sigue teniendo `hello` aunque se haya creado `demo2`.
+
+* Vemos que en Ruby la variable `my_var` es una variable de **clase compartida** entre toda la jerarquia. Por eso, cuando `ClassB` cambia el valor, afecta tambien a `demo1`, aunque sea instancia de `ClassA`.
+
+### 2
+
+* El codigo A no compilaria ya que un metodo `final` no se puede modificar en una subclase.
+
+* El codigo B no compilaria ya que una clase `final` no se puede subclasificar, aparte me parece que tampoco compilaria porque estamos modificando la variable `final` `value`.
+
+* El codigo C no compilaria ya que no se puede modificar una variable `final`.
+
+### 3
+
+La palabra clave `friend` en la linea 9 del codigo tiene la funcion de permitir que la `ClassB` pueda acceder a los miembros privados de la `ClassA`. En C++, cuando una clase A declara a otra clase B como `friend`, se le está otorgando a B el permiso de acceder directamente a los atributos y métodos privados o protegidos de A.
+
+### 4
+
+* En Java, si multiples **interfaces** tienen metodos con la misma firma, no hay conflictos ya que:
+
+    - No hay implementacion en las interfaces, solo declaraciones.
+
+    - La clase que implementan las interfaces solo necesita una unica implementacion del metodo con esa firma.
+
+    - En resumen: Mientras los métodos tengan exactamente la misma firma (mismo nombre y mismos parámetros), una sola implementación en la clase es suficiente para satisfacer a ambas interfaces.
